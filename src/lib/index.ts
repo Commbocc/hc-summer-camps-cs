@@ -1,4 +1,3 @@
-import { AxiosError } from 'axios'
 import { reactive } from 'vue'
 import { airtable } from './airtable'
 
