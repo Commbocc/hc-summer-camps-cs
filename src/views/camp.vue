@@ -10,12 +10,14 @@ fetchCampsOf(String(camp))
 </script>
 
 <template>
+  <!-- loading -->
   <div v-if="camps.loading" class="d-flex justify-content-center">
     <div class="spinner-border" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
 
+  <!-- error -->
   <div
     v-else-if="camps.error"
     class="alert alert-warning d-flex align-items-center"
@@ -40,8 +42,9 @@ fetchCampsOf(String(camp))
     </div>
   </div>
 
+  <!-- index -->
   <div v-else-if="camps.data.length">
-    <div class="list-group">
+    <div class="list-group list-group-flush">
       <Location
         v-for="location in camps.data"
         :key="location.id"
@@ -51,6 +54,7 @@ fetchCampsOf(String(camp))
     <!-- <pre>{{ camps.data }}</pre> -->
   </div>
 
+  <!-- no results -->
   <div v-else>
     No locations are offering <em class="fw-bold">{{ camp }}</em> camp
     registration at this time.
