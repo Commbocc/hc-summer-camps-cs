@@ -1,17 +1,17 @@
 <script setup lang="ts">
 const props = defineProps({
   location: Object,
-})
+});
 
 const getField = (field: string) => {
-  const fieldValue = props.location!.fields[field]
-  return Array.isArray(fieldValue) ? fieldValue[0] : fieldValue
-}
+  const fieldValue = props.location!.fields[field];
+  return Array.isArray(fieldValue) ? fieldValue[0] : fieldValue;
+};
 </script>
 
 <template>
   <a
-    :href="getField('LocationUrl')"
+    :href="getField('NewUrl')"
     class="list-group-item list-group-item-action"
     target="_top"
   >
